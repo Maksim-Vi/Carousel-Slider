@@ -1,0 +1,26 @@
+{
+  "name": "slaid_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start -p 80",
+    "deploy": "next build && git add -f out/ && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "classnames": "^2.2.6",
+    "fullscreen-react": "^1.0.4",
+    "next": "9.5.5",
+    "next-images": "^1.6.0",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
+    "react-full-screen": "^0.3.1",
+    "sass": "^1.27.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-define": "^2.0.0"
+  }
+}

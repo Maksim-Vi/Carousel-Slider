@@ -1,0 +1,165 @@
+%slider_control {
+    background-color: #ddd;
+    height: inherit; // принимает значение родителя
+    overflow: hidden;
+    position: relative;
+    width: inherit; // принимает значение родителя
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    -o-box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+%carousel_control {
+    font-size: 50px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    bottom: 0%;
+    text-align: center;
+    width: 50px;
+    height: 100%;
+    color: #3a4ba2;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+// ----------------- 1 Slider
+.wrapper {
+	height: 450px;
+	margin: 80px auto 0;
+	position: relative;
+    width: 800px;
+        .slider {
+            @extend %slider_control;
+            .slides{
+                height: inherit; // принимает значение родителя
+                width: inherit; // принимает значение родителя
+                .slide{
+                    height: inherit; // принимает значение родителя
+                    width: inherit; // принимает значение родителя
+                }
+            }
+        }
+}
+
+// ----------------- 2 Slider
+.sliderTwoAndMore__wrapper {
+    height: 200px;
+	margin: 200px auto 0;
+	position: relative;
+    width: 800px;
+    .sliderTwoAndMore {
+        display: flex;
+        @extend %slider_control;
+        .sliderTwoAndMore__slides {
+            flex: 0 0 50%;
+            max-width: 50%;
+            }
+            .imgSlide{
+                height: 200px;
+                line-height: 200px;
+                font-size: 100px;
+                text-align: center;
+            }
+      }    
+} 
+
+// ----------------- 3 Slider
+.SliderThreeImage_wrapper{
+    height: 350px;
+	margin: 80px auto 0;
+	position: relative;
+    width: 800px;
+    .SliderThreeImage_slider{
+        display: flex;
+        @extend %slider_control;
+        .SliderThreeImage_slides_prev {
+            flex: 0 0 10%;
+            max-width: 20%;
+            overflow: hidden;
+            opacity: 0.7;
+            .SliderThreeImage_slide{
+                height: inherit; // принимает значение родителя
+                width: inherit; // принимает значение родителя
+                transform: translateX(-90%);
+            }
+        }
+        .SliderThreeImage_slides_middle {
+            flex: 0 0 78%;
+            max-width: 80%;
+            width: inherit;
+            height: inherit;
+            padding: 0 10px 0 10px;
+            .SliderThreeImage_slide{
+                height: 100%; // принимает значение родителя
+                width: 100%; // принимает значение родителя
+            }
+        }
+        .SliderThreeImage_slides_next{
+            flex: 0 0 10%;
+            max-width: 20%;
+            overflow: hidden;
+            opacity: 0.7;
+            .SliderThreeImage_slide{
+                height: inherit; // принимает значение родителя
+                width: inherit; // принимает значение родителя
+                
+            }
+        }
+    }
+
+}
+
+//------------------ Dots
+.carousel_Dots{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    li{
+        display: inline-block;
+        margin: 0 5px;
+    }
+    .carousel_Dot{
+        color: #3a4ba2;
+        cursor: pointer;
+        display: block;
+        font-size: 35px;
+            &:hover{
+                color: #aaaaaa;
+            }
+    }
+    .carousel_Dot_Active{
+        color: #aaaaaa;
+    }
+
+}
+
+//------------------Button
+.carousel_control_Prev {
+    left: 0%;
+    @extend %carousel_control;
+    &:hover{
+        color: #aaaaaa;
+        background: none;
+        border: none;
+    }
+}
+
+.carousel_control_Next {
+    right: 0%;
+    @extend %carousel_control;
+    &:hover{
+        color: #aaaaaa;
+        background: none;
+        border: none;
+    }
+}
