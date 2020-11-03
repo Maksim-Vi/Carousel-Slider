@@ -6,6 +6,6 @@ module.exports = {
           "/": { page: "/" },
         }
     },
-  assetPrefix: !debug ? 'https://maksim-vi.github.io/Carousel-Slider' : '',
+  assetPrefix: !debug ? 'https://maksim-vi.github.io/Carousel-Slider/' : '',
   //assetPrefix: !debug ? '' : '',
 }
